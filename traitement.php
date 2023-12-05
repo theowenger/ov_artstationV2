@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // S'il y a des erreurs, afficher les messages
     if (!empty($errors)) {
         foreach ($errors as $error) {
-            echo $error . '<br>';
+            echo htmlspecialchars($error) . '<br>';
         }
     } else {
 
