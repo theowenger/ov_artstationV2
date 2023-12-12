@@ -1,11 +1,9 @@
 <?php
-require 'connexion.php';
-require 'validate-form.php';
-require 'insert-oeuvre.php';
-require 'sanitize-form.php';
+require 'tools/connexion.php';
+require 'tools/validate-form.php';
+require 'controller/insert-oeuvre.php';
+require 'tools/sanitize-form.php';
 
-//TODO: Spliter le code en fonctions + separer en plusieurs fichiers .php
-//documenter les fonctions
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 

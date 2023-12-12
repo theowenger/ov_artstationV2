@@ -1,18 +1,16 @@
 <?php
-require 'header.php';
-require 'connexion.php';
+require 'vue/header.php';
+require 'tools/connexion.php';
+require 'controller/fetch-oeuvre-by-id.php';
 
 $artworkId = isset($_GET['id']) ? $_GET['id'] : null;
 
-
-$artworkStatement = $dbh->prepare('SELECT * FROM oeuvres WHERE id = :id');
-$artworkStatement->bindParam(':id', $artworkId, PDO::PARAM_INT);
-$artworkStatement->execute();
-$oeuvre = $artworkStatement->fetch(PDO::FETCH_ASSOC);
+$oeuvre = fetchOeuvreById($dbh, $artworkId);
 
 if (empty($oeuvre)) {
     header('Location: index.php');
 }
+
 ?>
 
 <article id="detail-oeuvre">
@@ -28,4 +26,4 @@ if (empty($oeuvre)) {
     </div>
 </article>
 
-<?php require 'footer.php'; ?>
+<?php require 'vue/footer.php'; ?>

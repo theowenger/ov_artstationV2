@@ -1,6 +1,6 @@
 <?php
-require 'header.php';
-require 'connexion.php';
+require 'vue/header.php';
+require 'tools/connexion.php';
 
 $artworkStatement = $dbh->prepare('SELECT * FROM oeuvres');
 $artworkStatement->execute();
@@ -20,4 +20,4 @@ $oeuvres = $artworkStatement->fetchAll();
         </article>
     <?php endforeach; ?>
 </div>
-<?php require 'footer.php'; ?>
+<?php require 'vue/footer.php'; ?>
