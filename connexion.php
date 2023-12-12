@@ -1,4 +1,6 @@
 <?php
+
+//catching dotenv variables
 $env = file_get_contents('.env');
 $env = explode("\n", $env);
 
@@ -14,8 +16,6 @@ foreach ($env as $line) {
     list($key, $value) = explode('=', $line, 2);
     $dotenv[$key] = trim($value);
 }
-
-// Utilisez les valeurs du tableau $dotenv
 $user = $dotenv['DB_USER'] ?? '';
 $pass = $dotenv['DB_PASSWORD'] ?? '';
 $host = $dotenv['DB_HOST'] ?? '';
