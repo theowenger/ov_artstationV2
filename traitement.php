@@ -1,7 +1,7 @@
 <?php
 require 'tools/connexion.php';
 require 'tools/validate-form.php';
-require 'controller/insert-oeuvre.php';
+require 'model/insert-oeuvre.php';
 require 'tools/sanitize-form.php';
 
 

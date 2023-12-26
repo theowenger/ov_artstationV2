@@ -1,10 +1,14 @@
 <?php
+
 require 'vue/header.php';
 require 'tools/connexion.php';
+require  'model/find-all-artworks.php';
 
-$artworkStatement = $dbh->prepare('SELECT * FROM oeuvres');
-$artworkStatement->execute();
-$oeuvres = $artworkStatement->fetchAll();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+$oeuvres = findAllArtWorks($dbh);
 
 ?>
 

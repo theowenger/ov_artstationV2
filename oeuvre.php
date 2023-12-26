@@ -1,7 +1,7 @@
 <?php
 require 'vue/header.php';
 require 'tools/connexion.php';
-require 'controller/fetch-oeuvre-by-id.php';
+require 'model/fetch-oeuvre-by-id.php';
 
 $artworkId = isset($_GET['id']) ? $_GET['id'] : null;
 
